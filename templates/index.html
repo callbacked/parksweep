@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-color: #1c1c27;
+                font-family: Arial, sans-serif;
+                font-size: 18px;
+                color: white;
+                line-height: 1.5;
+                text-align: center;
+                padding-top: 50px;
+            }
+            h1 {
+                font-weight: bold;
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+            .odd {
+                color: #FF8C00;
+                font-weight: bold;
+            }
+            .even {
+                color: #007FFF;
+                font-weight: bold;
+            }
+.emojis {
+    font-size: 72px;
+    display: flex;
+    justify-content: space-between;
+}
+.emoji-group {
+    display: flex;
+    justify-content: center;
+}
+
+            .emojis span {
+                margin: 0px 10px;
+            }
+            .car.odd {
+        margin-right: 100px;
+    }
+            .car.even {
+        margin-left: 100px;
+    }
+
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 24px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+             <h1>Street Sweeping</h1>
+             <p>{{ message | safe }}</p>
+             <div class="emojis">
+                <div class="emoji-group">
+                    <span>🏠</span>
+                    {% if side == 'odd' %}
+                        <span>🧹</span>
+                    {% endif %}
+                </div>
+                <div class="emoji-group">
+                    {% if side == 'even' %}
+                        <span>🧹</span>
+                    {% endif %}
+                    <span>🌲</span>
+                </div>
+            </div>            
+            
+    </body>
+</html>
